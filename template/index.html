@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <main class="main__content_wrapper">
+        <!-- Start slider section -->
+        <section class="hero__slider--section slider__section--bg">
+            <div class="hero__slider--inner position__relative">
+                <div class="fluid-container" >
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero__slider--activation swiper">
+                                <div class="hero__slider--wrapper swiper-wrapper">
+                                    {% for s in slide %}
+                                    <div class="swiper-slide " style="background-image:url(/media/{{ s.logo }});height:100vh;background-position:center" >
+                                        <div class="hero__slider--items" style="padding:45rem 0">
+                                            <div class="hero__slider--thumbnail">
+                                            </div>
+                                            <div class="slider__content text-center">
+                                                <h2 class="slider__content--maintitle h1" style="color:white">{{ s.title }} </h2>
+                                                {% if s.description %}
+                                                <p class="slider__content--desc d-sm-2-none"> {{ s.description }}</p>
+                                                {% endif %}
+                                                <div class="slider__content--footer d-flex align-items-center justify-content-center">
+                                                    <a class="slider__content--btn primary__btn" href="#slideInUp">Заказать</a>
+<!--                                                    <div class="bideo__play slider__play&#45;&#45;bideo">-->
+<!--                                                        <a class="bideo__play&#45;&#45;icon glightbox" href="https://vimeo.com/115041822" data-gallery="video">-->
+<!--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 31 37">-->
+<!--                                                                <path  data-name="Polygon 1" d="M16.783,2.878a2,2,0,0,1,3.435,0l14.977,25.1A2,2,0,0,1,33.477,31H3.523a2,2,0,0,1-1.717-3.025Z" transform="translate(31) rotate(90)" fill="currentColor"></path>-->
+<!--                                                            </svg>-->
+<!--                                                            <span class="visually-hidden">Play</span>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+                                                </div>  
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__pagination swiper-pagination"></div>
+            </div>
+        </section>
+        <!-- End slider section -->
+
+
+         <!-- Start blog section -->
+        <section class="blog__section blog__section--bg ">
+            <div class="fluid-container">
+                <div class="row row-cols-md-3 row-cols-sm row-cols  " >
+                            <article style="padding-left:0px" class="blog__card">
+                                <div class="blog__card--thumbnail">
+                                    <a class="blog__card--thumbnail__link display-block" href="/">
+                                        <img class="blog__card--thumbnail__img display-block" src="/static/apartment.webp" style="    object-fit: cover;
+    height: 600px;" alt="blog-img">
+                                    </a>
+                                </div>
+                                <div class="blog__card--content">
+                                    <ul class="blog__card--meta d-flex justify-content-center">
+                                        <li class="blog__card--meta__text text__secondary">
+                                            Квартирные двери
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article style="padding-left:0px" class="blog__card">
+                                <div class="blog__card--thumbnail">
+                                    <a class="blog__card--thumbnail__link display-block" href="/">
+                                        <img class="blog__card--thumbnail__img display-block" src="/static/cottage.webp" style="    object-fit: cover;
+    height: 600px;" alt="blog-img">
+                                    </a>
+                                </div>
+                                <div class="blog__card--content">
+                                    <ul class="blog__card--meta d-flex justify-content-center">
+                                        <li class="blog__card--meta__text text__secondary">
+
+Входные двери
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article >
+                            <article style="padding-left:0px" class="blog__card">
+                                <div class="blog__card--thumbnail">
+                                    <a class="blog__card--thumbnail__link display-block" href="/">
+                                        <img class="blog__card--thumbnail__img display-block" src="/static/electronic.webp" style="    object-fit: cover;
+    height: 600px;" alt="blog-img">
+                                    </a>
+                                </div>
+                                <div class="blog__card--content">
+                                    <ul class="blog__card--meta d-flex justify-content-center">
+                                        <li class="blog__card--meta__text text__secondary">
+                                            Фурнитуры
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- End blog section -->
+
+
+
+
+
+
+         <!-- Start counterup section -->
+        <div class="counterup__section section--padding" id="funfactId">
+            <div class="container">
+                <div class="section__heading text-center mb-50">
+                    <h2 class="section__heading--maintitle text__secondary mb-10">Почему выбирают нас</h2>
+<!--                    <p class="section__heading&#45;&#45;desc">Beyond more stoic this along goodness this sed wow manatee mongos-->
+<!--                        flusterd impressive man farcrud opened.</p>-->
+                </div>
+                <div class="counterup--inner">
+                    <div class="row row-cols-md-4 row-cols-sm-3 row-cols-2 mb--n30">
+                        <div class="col mb-30">
+                            <div class="single__counterup" style="padding: 4rem 1rem;height: 200px;">
+
+                                <p class="counterup__number" ><span class="js-counter" data-count="15">15</span></p>
+                                <h3 class="counterup__title">летним опытом</h3>
+                            </div>
+                        </div>
+                        <div class="col mb-30">
+                            <div class="single__counterup" style="padding: 4rem 1rem;height: 200px;">
+
+
+                                <p class="counterup__number" ><span class="js-counter" data-count="20">20</span>+</p>
+                                <h3 class="counterup__title">крупных портфолио с лидерами</h3>
+                            </div>
+                        </div>
+                        <div class="col mb-30">
+                            <div class="single__counterup" style="padding: 4rem 1rem;height: 200px;">
+
+
+                                <p class="counterup__number" ><span class="js-counter" data-count="1500">1500</span>+</p>
+                                <h3 class="counterup__title">дверей в месяц</h3>
+                            </div>
+                        </div>
+                        <div class="col mb-30">
+                            <div class="single__counterup" style="padding: 4rem 1rem;height: 200px;">
+
+                                <p class="counterup__number" ><span class="js-counter" data-count="17000">17000</span></p>
+                                <h3 class="counterup__title">кв.м. производственной площади</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End counterup section -->
+
+
+
+<!--        &lt;!&ndash; Start image with text section &ndash;&gt;-->
+<!--        <section class="image__with&#45;&#45;text__section section&#45;&#45;padding">-->
+<!--            <div class="container">-->
+<!--                <div class="row row-cols-md-2 row-cols-1  align-items-center">-->
+<!--                    <div class="col">-->
+<!--                        <div class="image__with&#45;&#45;text__thumbnail">-->
+<!--                            <img class="display-block" src="/static/img/other/drone-image.webp" alt="drone-image">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <div class="image__with&#45;&#45;text__content">-->
+<!--                            <h2 class="image__with&#45;&#45;text__title mb-18">Most Talented Builders -->
+<!--                                Architects Drone.</h2>-->
+<!--                            <p class="image__with&#45;&#45;text__desc mb-25">Beyond more stoic this along goodness this sed wow manatee mongos -->
+<!--                                flusterd impressive man farcrud opened inside owin punitively -->
+<!--                                wasteful telling spransac coldly spokeles.</p> -->
+<!--                            <div class="image__with&#45;&#45;text__percent color-primary-2 mb-40">-->
+<!--                                <ul>-->
+<!--                                    <li class="image__with&#45;&#45;text__percent&#45;&#45;list mb-25">-->
+<!--                                        <span class="image__with&#45;&#45;text__percent&#45;&#45;top d-flex justify-content-between align-content-center">-->
+<!--                                            <span class="image__with&#45;&#45;text__percent&#45;&#45;content">Integrative control</span>-->
+<!--                                            <span class="image__with&#45;&#45;text__percent&#45;&#45;content">58%</span>-->
+<!--                                        </span>-->
+<!--                                    </li>-->
+<!--                                    <li class="image__with&#45;&#45;text__percent&#45;&#45;list two">-->
+<!--                                        <span class="image__with&#45;&#45;text__percent&#45;&#45;top d-flex justify-content-between align-content-center">-->
+<!--                                            <span class="image__with&#45;&#45;text__percent&#45;&#45;content">Design Device</span>-->
+<!--                                            <span class="image__with&#45;&#45;text__percent&#45;&#45;content">77%</span>-->
+<!--                                        </span>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>  -->
+<!--                            <div class="image__with&#45;&#45;text__content&#45;&#45;footer d-flex">-->
+<!--                                <img class="display-block" src="/static/img/other/text-shape.webp" alt="text-shape">-->
+<!--                                <p class="image__with&#45;&#45;text__content&#45;&#45;footer__desc">-->
+<!--                                    YEARS SINCE WE ESTABLISHED - <br>-->
+<!--                                    EXPERIENCE & STILL A GROWING <br>-->
+<!--                                    PROTFOLIO DAY BY DAY!</p>-->
+<!--                            </div>    -->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <img class="image__with&#45;&#45;text__position&#45;&#45;shape display-block" src="/static/img/other/image-with-text-section-shape.webp" alt="shape img">-->
+<!--        </section>-->
+<!--        &lt;!&ndash; End image with text section &ndash;&gt;-->
+
+
+        <section class="product__details--section section--padding">
+            <div class="container">
+                <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1">
+                    <div class="col">
+                        <div class="product__details--gallery">
+                            <a class="glightbox" data-gallery="product-media-preview" href="/static/apartment.webp">
+                                        <img class="display-block" src="/static/apartment.webp" style="width:100%"
+                                             height="508px;object-fit:cover" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product__details--gallery">
+                            <div class="row row-cols-2 mb--n28">
+                                <div class="col mb-28">
+                                    <a class="glightbox" data-gallery="product-media-preview" href="/static/img/product/product1.webp">
+                                        <img class="display-block" src="/static/apartment.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="col mb-28">
+                                    <a class="glightbox" data-gallery="product-media-preview" href="/static/img/product/product2.webp">
+                                        <img class="display-block" src="/static/apartment.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="col mb-28">
+                                    <a class="glightbox" data-gallery="product-media-preview" href="/static/img/product/product3.webp">
+                                        <img class="display-block" src="/static/apartment.webp" alt="">
+                                    </a>
+                                </div>
+                                <div class="col mb-28">
+                                    <a class="glightbox" data-gallery="product-media-preview" href="/static/img/product/product4.webp">
+                                        <img class="display-block" src="/static/apartment.webp" alt="">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="blog__section blog__section--bg section--padding">
+            <div class="fluid-container">
+                <div class="section__heading text-center mb-50">
+                    <h2 class="section__heading--maintitle text__secondary mb-10">Галерея наших работ</h2>
+
+                </div>
+                <div class="blog__section--inner blog__swiper--activation swiper">
+                    <div class="swiper-wrapper">
+                        {% for p in examples %}
+                        <div class="swiper-slide">
+                            <div class="portfolio__items">
+                                <div class="portfolio__items--thumbnail position__relative">
+                                    <a class="portfolio__items--thumbnail__link glightbox" href="/media/{{ p.logo }}" data-gallery="portfolio"><img style="height: 400px;
+    object-fit: cover;" class="portfolio__items--thumbnail__img" src="/media/{{ p.logo }}" alt="portfolio-img">
+                                        <span class="portfolio__view--icon" ><svg xmlns="http://www.w3.org/2000/svg" width="39.697" height="27.066" viewBox="0 0 39.697 27.066">
+                                            <path  d="M20.849,4.5A21.341,21.341,0,0,0,1,18.033a21.322,21.322,0,0,0,39.7,0A21.341,21.341,0,0,0,20.849,4.5Zm0,22.555a9.022,9.022,0,1,1,9.022-9.022A9.025,9.025,0,0,1,20.849,27.055Zm0-14.435a5.413,5.413,0,1,0,5.413,5.413A5.406,5.406,0,0,0,20.849,12.62Z" transform="translate(-1 -4.5)" fill="currentColor"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper__nav--btn swiper-button-next"></div>
+                    <div class="swiper__nav--btn swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Start banner section -->
+        <div class="banner__video--section banner__section--bg position__relative section--padding">
+<!--            <img class="drone__position&#45;&#45;img display-block" src="/static/img/other/drone-position-img.webp" alt="drone-position-img">-->
+            <div class="container">
+                <div class="banner__video--content position__relative text-center">
+                    <div class="bideo__play banner__video--play mb-35">
+                        <a class="bideo__play--icon banner__video--play__icon glightbox" href="https://vimeo.com/115041822" data-gallery="video">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 31 37">
+                                <path  data-name="Polygon 1" d="M16.783,2.878a2,2,0,0,1,3.435,0l14.977,25.1A2,2,0,0,1,33.477,31H3.523a2,2,0,0,1-1.717-3.025Z" transform="translate(31) rotate(90)" fill="currentColor"></path>
+                            </svg>
+                            <span class="visually-hidden">Play</span>
+                        </a>
+                    </div>
+                    <h2 class="banner__video--title text-white mb-15">Специалисты с 15-летним опытом</h2>
+<!--                    <p class="banner__video&#45;&#45;info text-white">Get Your Quote or Call: <a href="tel:+88021544142">(+88021544142)</a></p>-->
+<!--                    <a class="banner__video&#45;&#45;btn primary__btn" href="contact.html">Ask For Price</a>-->
+                </div>
+            </div>
+        </div>
+        <!-- End banner section -->
+
+       <!-- Start contact section -->
+        <section class="contact__section section--padding">
+            <div class="container">
+                <div class="section__heading text-center mb-40">
+                    <h2 class="section__heading--maintitle text__secondary mb-10">Остались вопросы?</h2>
+                    <p class="section__heading--desc">Для получения детальной консультации и расчета стоимости услуги, заполните, пожалуйста, следующие поля:</p>
+                </div>
+                <div class="main__contact--area">
+                    <div class="row align-items-center row-md-reverse">
+                        <div class="col-lg-7 mx-auto">
+                            <div class="contact__form">
+                                <form class="contact__form--inner"  action="/contact" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="contact__form--list mb-20">
+                                                <label class="contact__form--label" for="input1">имя <span class="contact__form--label__star">*</span></label>
+                                                <input class="contact__form--input" name="name" id="input1" placeholder="Ваше имя" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="contact__form--list mb-20">
+                                                <label class="contact__form--label" for="input3">номер <span class="contact__form--label__star">*</span></label>
+                                                <input class="contact__form--input" name="phone" id="input3" placeholder="Номер телефона" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="contact__form--list mb-10">
+                                                <label class="contact__form--label" for="input5">сообщение <span class="contact__form--label__star">*</span></label>
+                                                <textarea class="contact__form--textarea" name="message" id="input5" placeholder="Ваше сообщение"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="contact__form--btn primary__btn" type="submit">Отправить</button>
+                                    <p class="form-messege"></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End contact section -->
+
+        <!-- Start contact map area -->
+        <div class="contact__map--area section--padding pt-0">
+            <iframe class="contact__map--iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5893.639986839054!2d69.627919!3d42.388981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a91de65f220d0d%3A0xf015d31cdcfec566!2sPRIME%20PARK!5e0!3m2!1sru!2skz!4v1707095411988!5m2!1sru!2skz" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <!-- End contact map area -->
+
+
+
+
+    </main>
+
+{% endblock %}
