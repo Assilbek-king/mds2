@@ -125,3 +125,12 @@ def FurniturHandler(request):
         'st': st,
 
     })
+
+
+def ProductDetailHandler(request,pr_id):
+    product = Tovar.objects.get(id=pr_id)
+
+    return render(request, 'product-details.html', {
+        'product': product,
+
+    })

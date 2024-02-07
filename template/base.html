@@ -316,7 +316,7 @@
                         <div class="newsletter__popup--subscribe" id="frm_subscribe">
                             <form class="newsletter__popup--subscribe__form" action="/" method="post">
                                 {% csrf_token %}
-                                <input class="newsletter__popup--subscribe__input" type="text" name="phone" placeholder="Телефон в формате +7хххххххххх">
+                                <input class="newsletter__popup--subscribe__input" required type="text" name="phone" placeholder="Телефон в формате +7хххххххххх">
                                 <button class="newsletter__popup--subscribe__btn" type="submit">Отправить</button>
                             </form>
 
