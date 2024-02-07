@@ -871,13 +871,13 @@
                                                     <div class="product__card--thumbnail product__swiper--column1 swiper">
                                                         <div class="swiper-wrapper">
                                                             <div class="swiper-slide">
-                                                                <a class="product__card--thumbnail__link display-block" href="/vhodnoy/{{ pr.id}}">
+                                                                <a class="product__card--thumbnail__link display-block" href="/product/{{ pr.id}}">
                                                                     <img class="product__card--thumbnail__img product__primary--img display-block" src="/media/{{ pr.logo1 }}" alt="product-img">
                                                                     <img class="product__card--thumbnail__img product__secondary--img display-block" src="/media/{{ pr.logo2 }}" alt="product-img">
                                                                 </a>
                                                             </div>
                                                             <div class="swiper-slide">
-                                                                <a class="product__card--thumbnail__link display-block" href="/vhodnoy/{{ pr.id}}">
+                                                                <a class="product__card--thumbnail__link display-block" href="/product/{{ pr.id}}">
                                                                     {% if pr.logo3 %}
                                                                     <img class="product__card--thumbnail__img product__primary--img display-block" src="/media/{{ pr.logo3 }}" alt="product-img">
                                                                     {% endif %}
@@ -919,7 +919,7 @@
                                                     </div>
                                                     <div class="product__card--content text-center">
                                                         <span class="product__card--meta__tag">{{ pr.cat.title }}</span>
-                                                        <h3 class="product__card--title"><a href="/vhodnoy/{{ pr.id }}">{{ pr.title }} </a></h3>
+                                                        <h3 class="product__card--title"><a href="/product/{{ pr.id }}">{{ pr.title }} </a></h3>
 <!--                                                        <div class="product__card&#45;&#45;price">-->
 <!--                                                            <span class="current__price">$245</span>-->
 <!--                                                            <span class="price__divided"></span>-->

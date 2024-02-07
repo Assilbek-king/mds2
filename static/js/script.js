@@ -896,3 +896,12 @@ const newsletterPopup = function () {
   }
 };
 newsletterPopup();
+
+// Modalni ochish uchun JavaScript funksiyasi
+//function openModal() {
+//  var modal = document.querySelector('.newsletter__popup');
+//  modal.style.display = 'block';
+//}
+//
+//// Tugmani tanlash va uni bosish hodisasi uchun hodisa qo'shish
+//document.querySelector('.variant__buy--now__btn').onclick = openModal;

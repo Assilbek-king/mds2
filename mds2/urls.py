@@ -29,6 +29,7 @@ urlpatterns = [
     path('vhodnoy', VhodnoyHandler),
     path('kvartira', KvartiraHandler),
     path('furnitur', FurniturHandler),
+    path('product/<int:pr_id>', ProductDetailHandler),
 
     url(r'^media/(?P<path>.*)$', serve, {
         'document_root': settings.MEDIA_ROOT
