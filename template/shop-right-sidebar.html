@@ -7,18 +7,18 @@
             <svg class="minicart__close--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"></path></svg> <span class="offcanvas__filter--close__text">Close</span>
         </button>
         <div class="offcanvas__filter--sidebar__inner">
-            <div class="single__widget widget__bg">
+            <form class="single__widget widget__bg">
                 <h2 class="widget__title position__relative h3">Категории</h2>
                 <ul class="widget__form--check">
-                    {% for c in cats %}
+                    {% for cat in cats %}
                     <li class="widget__form--check__list">
-                        <label class="widget__form--check__label" for="check5">{{ c.title }}</label>
-                        <input class="widget__form--check__input" id="check5" type="checkbox">
+                        <label class="widget__form--check__label" for="check{{cat.id}}">{{ cat.title }}</label>
+                        <input class="widget__form--check__input js-changes"  value="{{cat.id}}" {% if cat.id in active_cats %} checked {% endif %} id="check{{cat.id}}" name="active_cat" type="checkbox">
                         <span class="widget__form--checkmark"></span>
                     </li>
                     {% endfor %}
                 </ul>
-            </div>
+            </form>
 <!--            <div class="single__widget widget__bg">-->
 <!--                <h2 class="widget__title position__relative h3">Search</h2>-->
 <!--                <form class="widget__search&#45;&#45;form" action="#">-->
@@ -385,20 +385,20 @@
     <main class="main__content_wrapper">
         
         <!-- Start breadcrumb section -->
-        <section class="breadcrumb__section breadcrumb__bg">
+        <section class="breadcrumb__section breadcrumb__bg" style="background:url(/static/q2.jpg);background-size:cover;background-position:center">
             <div class="container">
                 <div class="row row-cols-1">
                     <div class="col">
                         <div class="breadcrumb__content">
                             {% if st == 1 %}
-                            <h1 class="breadcrumb__content--title mb-10">Входные двери</h1>
+                            <h1 class="breadcrumb__content--title mb-10" style="color:white">Входные двери</h1>
                             {% elif st == 2 %}
-                            <h1 class="breadcrumb__content--title mb-10">Квартирные двери</h1>
+                            <h1 class="breadcrumb__content--title mb-10" style="color:white">Квартирные двери</h1>
                             {% elif st == 3 %}
-                            <h1 class="breadcrumb__content--title mb-10">Фурнитуры</h1>
+                            <h1 class="breadcrumb__content--title mb-10" style="color:white">Фурнитуры</h1>
                             {% endif %}
                             <ul class="breadcrumb__content--menu d-flex">
-                                <li class="breadcrumb__content--menu__items"><a href="/">Главная</a></li>
+                                <li class="breadcrumb__content--menu__items"><a href="/" style="color:white">Главная</a></li>
                                 {% if st == 1 %}
                                 <li class="breadcrumb__content--menu__items"><span class="text__secondary">Входные двери</span></li>
                                 {% elif st == 2 %}
@@ -602,18 +602,18 @@
 <!--                                    <button class="price__filter&#45;&#45;btn primary__btn" type="submit">Filter</button>-->
 <!--                                </form>-->
 <!--                            </div>-->
-                            <div class="single__widget widget__bg">
-                                <h2 class="widget__title position__relative h3">Категории</h2>
-                                <ul class="widget__form--check">
-                                    {% for c in cats %}
-                                    <li class="widget__form--check__list">
-                                        <label class="widget__form--check__label" for="check1">{{ c.title }}</label>
-                                        <input class="widget__form--check__input" id="check1" type="checkbox">
-                                        <span class="widget__form--checkmark"></span>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                             <form class="single__widget widget__bg">
+                <h2 class="widget__title position__relative h3">Категории</h2>
+                <ul class="widget__form--check">
+                    {% for cat in cats %}
+                    <li class="widget__form--check__list">
+                        <label class="widget__form--check__label" for="check{{cat.id}}">{{ cat.title }}</label>
+                        <input class="widget__form--check__input js-changes"  value="{{cat.id}}" {% if cat.id in active_cats %} checked {% endif %} id="check{{cat.id}}" name="active_cat" type="checkbox">
+                        <span class="widget__form--checkmark"></span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </form>
 <!--                            <div class="single__widget widget__bg">-->
 <!--                                <h2 class="widget__title position__relative h3">Top Rated Product</h2>-->
 <!--                                <div class="product__sidebar">-->
@@ -878,6 +878,7 @@
                                                             </div>
                                                             <div class="swiper-slide">
                                                                 <a class="product__card--thumbnail__link display-block" href="/product/{{ pr.id}}">
+
                                                                     {% if pr.logo3 %}
                                                                     <img class="product__card--thumbnail__img product__primary--img display-block" src="/media/{{ pr.logo3 }}" alt="product-img">
                                                                     {% endif %}
@@ -938,22 +939,25 @@
                             <div class="pagination__area bg__gray--color">
                                 <nav class="pagination justify-content-center">
                                     <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
+                                        {% if current_page != 1 %}
                                         <li class="pagination__list">
-                                            <a href="shop.html" class="pagination__item--arrow  link ">
+                                            <a href="/{% if st == 1 %}vhodnoy{% elif st == 2 %}kvartira{% elif st == 3 %}furnitur{% endif %}?page={{prev_page}}&active_cat={{active_cats|join:"&active_cat="}}" class="pagination__item--arrow  link ">
                                                 <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
                                                 <span class="visually-hidden">pagination arrow</span>
                                             </a>
                                         <li>
-                                        <li class="pagination__list"><span class="pagination__item pagination__item--current">1</span></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">2</a></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">3</a></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">4</a></li>
+                                        {% endif %}
+                                        {% for p in pages %}
+                                        <li class="pagination__list"><a href="/{% if st == 1 %}vhodnoy{% elif st == 2 %}kvartira{% elif st == 3 %}furnitur{% endif %}?page={{ p }}&active_cat={{active_cats|join:"&active_cat="}}" class=" {% if current_page == p %} pagination__item--current {% endif %} pagination__item link">{{p}}</a></li>
+                                        {% endfor %}
+                                        {% if next_page %}
                                         <li class="pagination__list">
-                                            <a href="shop.html" class="pagination__item--arrow  link ">
+                                            <a href="/{% if st == 1 %}vhodnoy{% elif st == 2 %}kvartira{% elif st == 3 %}furnitur{% endif %}?page={{next_page}}&active_cat={{active_cats|join:"&active_cat="}}" class="pagination__item--arrow  link ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
                                                 <span class="visually-hidden">pagination arrow</span>
                                             </a>
                                         <li>
+                                        {% endif  %}
                                     </ul>
                                 </nav>
                             </div>
